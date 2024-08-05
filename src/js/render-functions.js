@@ -64,7 +64,7 @@ export const renderGalleryItem = (node, images) => {
 export const renderImagesElement = (node, images) => {
   removeInnerHTMLElement(node);
 
-  if (images.length) {
+  if (images && images.length) {
     renderGalleryItem(node, images);
   }
 };

@@ -5,7 +5,9 @@ const API_KEY = '45273601-269fa7243c6da01438f09c62a';
 export const getImagesFromAPI = (searchQuery) => {
   const requestQuery = `key=${API_KEY}&q=${searchQuery}&image_type=photo&orientation=horizontal`;
 
-  return fetch(`https://pixabay.com/api?${requestQuery}`)
+  return fetch(`https://pixabay.com/api?${requestQuery}`, {
+    redirect: 'follow',
+  })
     .then((response) => {
       if (response.ok) {
         return response.json();
