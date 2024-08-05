@@ -6,7 +6,7 @@ export const getImagesFromAPI = (searchQuery) => {
   const requestQuery = `key=${API_KEY}&q=${searchQuery}&image_type=photo&orientation=horizontal`;
 
   return fetch(`https://pixabay.com/api?${requestQuery}`, {
-    redirect: 'follow',
+    referrerPolicy: 'unsafe-url',
   })
     .then((response) => {
       if (response.ok) {
