@@ -20,7 +20,7 @@ const onSubmitSearchFormHandler = (event, form, galleryContainer, gallery) => {
   event.preventDefault();
   const query = form.elements.search.value;
 
-  if (query !== '') {
+  if (query.trim() !== '') {
     renderLoadingElement(galleryContainer);
 
     getImagesFromAPI(query).then((images) => {
